@@ -12,15 +12,14 @@ struct ContentView: View {
     @State private var wakeUp = Date()
     
     var body: some View {
-        Form {
-            let now = Date()
-            let tomorrow = Date().addingTimeInterval(86400)
-            let range = now ... tomorrow
-            
-            DatePicker("Please Enter a Date", selection: $wakeUp, displayedComponents: .hourAndMinute)
+       let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let dateString = formatter.string(from: Date())
+        
+           return  DatePicker("Please Enter a Date", selection: $wakeUp, displayedComponents: .hourAndMinute)
             .labelsHidden()
         
-        }
+        
     }
 
 }
