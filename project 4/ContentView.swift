@@ -10,15 +10,21 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var wakeUp = Date()
+    @State private var sleepAmount = 8.0
+    @State private var coffeeAmount = 1
     
     var body: some View {
-       let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        let dateString = formatter.string(from: Date())
-        
-           return  DatePicker("Please Enter a Date", selection: $wakeUp, displayedComponents: .hourAndMinute)
-            .labelsHidden()
-        
+        NavigationView {
+            VStack {
+                Text("When do you want to wake up?")
+                    .font(.headline)
+                
+                DatePicker("Please enter your time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                    .labelsHidden()
+                
+                //more to come
+            }
+        }
         
     }
 
