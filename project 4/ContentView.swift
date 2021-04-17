@@ -12,6 +12,9 @@ struct ContentView: View {
     @State private var wakeUp = Date()
     @State private var sleepAmount = 8.0
     @State private var coffeeAmount = 1
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    @State private var showingAlert = false
     
     var body: some View {
         NavigationView {
@@ -44,8 +47,8 @@ struct ContentView: View {
             }
             .navigationTitle("BetterRest")
             .navigationBarItems(trailing:
-//                                    here we have used calculateBedtime() without patenthesis because thaat means that call the function when button is tapped and the function returns a closute to run
-//                                    but while only writing the name without patenthesis means run the function when button is tappes without expecting return or anything
+//  here we have used calculateBedtime() without patenthesis because thaat means that call the function when button is tapped and the function returns a closute to run
+//   but while only writing the name without patenthesis means run the function when button is tappes without expecting return or anything
                 Button (action: calculateBedtime) {
                     Text("Calculate")
                 }
@@ -55,7 +58,24 @@ struct ContentView: View {
     }
     
     func calculateBedtime() {
+        let model = SleepCalculator()
+        let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
+        let hour = (components.hour ?? 0) * 60 * 60
+        let minute = (components.minute ?? 0) * 60
         
+        do {
+            let prediction = try model.prediction(input: wake: Double(hour + minute), estimatedSleep: Double(sleepAmount), coffee: Double(coffeeAmount))
+            
+            let sleepTime = wakeUp - prediction.actualSleep
+            let formatter  = DateFormatter()
+            formatter.timeStyle = .short
+        }
+        catch {
+            //somrthing went wrong
+            alertTitle = "Error"
+            alertMessage = "Sorry ! we could not calculate your bedtime"
+        }
+        showingAlert = true
     }
 
 }
