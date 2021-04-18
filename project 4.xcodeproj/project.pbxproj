@@ -13,7 +13,7 @@
 		AF121A76261DD585008D3E2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF121A75261DD585008D3E2E /* Assets.xcassets */; };
 		AF121A79261DD585008D3E2E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF121A78261DD585008D3E2E /* Preview Assets.xcassets */; };
 		AF121A7C261DD585008D3E2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF121A7A261DD585008D3E2E /* LaunchScreen.storyboard */; };
-		AF4BC040262AE9EE00B4E5B8 /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AF4BC03F262AE9EE00B4E5B8 /* SleepCalculator.mlmodel */; };
+		AF3291D9262C31E50019BD2A /* SleepCalculator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AF3291D8262C31E50019BD2A /* SleepCalculator.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		AF121A78261DD585008D3E2E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF121A7B261DD585008D3E2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF121A7D261DD585008D3E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF4BC03F262AE9EE00B4E5B8 /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = SOURCE_ROOT; };
+		AF3291D8262C31E50019BD2A /* SleepCalculator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SleepCalculator.mlmodel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				AF121A75261DD585008D3E2E /* Assets.xcassets */,
 				AF121A7A261DD585008D3E2E /* LaunchScreen.storyboard */,
 				AF121A7D261DD585008D3E2E /* Info.plist */,
-				AF4BC03F262AE9EE00B4E5B8 /* SleepCalculator.mlmodel */,
+				AF3291D8262C31E50019BD2A /* SleepCalculator.mlmodel */,
 				AF121A77261DD585008D3E2E /* Preview Content */,
 			);
 			path = "project 4";
@@ -149,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF121A70261DD582008D3E2E /* AppDelegate.swift in Sources */,
-				AF4BC040262AE9EE00B4E5B8 /* SleepCalculator.mlmodel in Sources */,
+				AF3291D9262C31E50019BD2A /* SleepCalculator.mlmodel in Sources */,
 				AF121A72261DD582008D3E2E /* SceneDelegate.swift in Sources */,
 				AF121A74261DD582008D3E2E /* ContentView.swift in Sources */,
 			);
