@@ -53,29 +53,34 @@ struct ContentView: View {
                     Text("Calculate")
                 }
             )
+            .alert(isPresented: $showingAlert){
+                Alert(title: Text(alertTitle), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            }
         }
         
     }
     
     func calculateBedtime() {
-//        let model = SleepCalculator()
-//        let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
-//        let hour = (components.hour ?? 0) * 60 * 60
-//        let minute = (components.minute ?? 0) * 60
-//        
-//        do {
-//            let prediction = try model.prediction(input: wake: Double(hour + minute), estimatedSleep: Double(sleepAmount), coffee: Double(coffeeAmount))
-//
-//            let sleepTime = wakeUp - prediction.actualSleep
-//            let formatter  = DateFormatter()
-//            formatter.timeStyle = .short
-//        }
-//        catch {
-//            //somrthing went wrong
-//            alertTitle = "Error"
-//            alertMessage = "Sorry ! we could not calculate your bedtime"
-//        }
-//        showingAlert = true
+        let model = SleepCalculator()
+        let components = Calendar.current.dateComponents([.hour, .minute], from: wakeUp)
+        let hour = (components.hour ?? 0) * 60 * 60
+        let minute = (components.minute ?? 0) * 60
+        
+        do {
+            let prediction = try model.prediction(wake: Double(hour + minute), estimatedSleep: Double(sleepAmount), coffee: Double(coffeeAmount ))
+            let sleepTime = wakeUp - prediction.actualSleep
+            
+            let formatter = DateFormatter()
+            formatter.timeStyle = .short
+            
+            alertMessage = formatter.string(from: sleepTime)
+            alertTitle = "Your ideal bedtime is ..."
+        }
+        catch {
+            alertTitle = "Error"
+            alertMessage = "Sorry there is a problem calculating your bedtime"
+        }
+        showingAlert = true
     }
 
 }
