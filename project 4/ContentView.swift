@@ -82,7 +82,7 @@ struct ContentView: View {
         }
         showingAlert = true
     }
-// this is second last tutorial
+
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
