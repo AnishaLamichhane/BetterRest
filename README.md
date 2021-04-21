@@ -1,5 +1,5 @@
 # BetterRest
-This SwiftUI project is another forms-based app that will ask the user to enter information and convert that all into an alert. It uses a CoreML, Date() function .
+This SwiftUI project is another forms-based app that will ask the user to enter information and convert that all into an alert.
 
 Challenge
 One of the best ways to learn is to write your own code as often as possible, so here are three ways you should try extending this app to make sure you fully understand what’s going on:
